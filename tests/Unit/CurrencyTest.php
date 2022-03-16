@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Models\Product;
 use App\Services\CurrencyService;
 use PHPUnit\Framework\TestCase;
 
@@ -29,4 +30,6 @@ class CurrencyTest extends TestCase
         $amount_in_usd = 100;
         $this->assertEquals(123, (new CurrencyService())->convert($amount_in_usd, 'usd','gbp'));
     }
+
+
 }
