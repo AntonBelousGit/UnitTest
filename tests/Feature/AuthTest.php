@@ -48,7 +48,7 @@ class AuthTest extends TestCase
             ]
         );
 
-        $response = $this->actingAs($user)->get('/');
+        $response = $this->actingAs($user)->get('/products');
 
         $response->assertStatus(200);
 
@@ -56,7 +56,7 @@ class AuthTest extends TestCase
 
     public function test_unauthenticated_user_cannot_access_products_table()
     {
-        $response = $this->get('/');
+        $response = $this->get('/products');
         $response->assertStatus(302);
         $response->assertRedirect('/login');
         //Assert status not 200
